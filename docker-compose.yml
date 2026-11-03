@@ -3,6 +3,7 @@ services:
     env_file:
       - .env.local
     image: ${CH_IMAGE}:${CH_VERSION}
+    container_name: clickhouse
     environment:
       CLICKHOUSE_USER: ${CLICKHOUSE_USER}
       CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
@@ -12,4 +13,3 @@ services:
       - ${CLICKHOUSE_PORT}:${CLICKHOUSE_PORT}
     volumes:
       - ./volume:/var/lib/clickhouse
-      - ./initdb:/docker-entrypoint-initdb.d:ro

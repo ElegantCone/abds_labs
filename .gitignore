@@ -102,3 +102,4 @@ composer.lock
 
 # ClickHouse data
 volume/
+data/
