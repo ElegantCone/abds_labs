@@ -1,4 +1,4 @@
-INSERT INTO energosbyt.fact_meter_readings
+INSERT INTO fact_meter_readings
     (realty_id, user_id, tariff_id, gauge_id, reading_date, day_kw, night_kw, created_at)
 SELECT realty_id, user_id, tariff_id, gauge_id, reading_date, day_kw, night_kw, created_at
 FROM input('realty_id UInt64,

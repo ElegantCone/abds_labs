@@ -1,4 +1,4 @@
-INSERT INTO energosbyt.fact_gauge_bindings
+INSERT INTO fact_gauge_bindings
     (gauge_id, realty_id, created_at, sign, version)
 SELECT gauge_id, realty_id, created_at, sign, version
 FROM input('gauge_id UInt64,

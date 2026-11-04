@@ -1,4 +1,4 @@
-INSERT INTO energosbyt.dim_users (id, fio, phone, phone_prev, created_at, updated_at)
+INSERT INTO dim_users (id, fio, phone, phone_prev, created_at, updated_at)
 SELECT id, fio, phone, phone_prev, created_at, updated_at
 FROM input('id         UInt64,
     fio        String,

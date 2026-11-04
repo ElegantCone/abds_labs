@@ -94,7 +94,8 @@ public class DataGen {
             realty.createdAt(randomDateTime(LocalDate.of(2018, 1, 1), LocalDate.of(2022, 12, 31)));
             switch (type) {
                 case "nrcp": {
-                    realty.square(Math.max(20, choice(address.commercial()) + random.nextInt(-15, 31)))
+                    realty.number("")
+                            .square(Math.max(20, choice(address.commercial()) + random.nextInt(-15, 31)))
                             .rooms(0)
                             .floor(1)
                             .porch(0);

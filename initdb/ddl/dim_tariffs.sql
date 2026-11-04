@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS energosbyt.dim_tariffs
+CREATE TABLE IF NOT EXISTS dim_tariffs
 (
     id               UInt64,
     name             String,

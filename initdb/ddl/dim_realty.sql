@@ -1,9 +1,9 @@
-CREATE TABLE IF NOT EXISTS energosbyt.dim_realty
+CREATE TABLE IF NOT EXISTS dim_realty
 (
     id         UInt64,
     address    String,
     square     UInt32,
-    `type`     LowCardinality(String),
+    `type`     String,
     number     String,
     rooms      UInt8,
     floor      UInt8,

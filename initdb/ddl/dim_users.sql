@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS energosbyt.dim_users
+CREATE TABLE IF NOT EXISTS dim_users
 (
     id         UInt64,
     fio        String,

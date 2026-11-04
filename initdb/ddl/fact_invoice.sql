@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS energosbyt.fact_invoice
+CREATE TABLE IF NOT EXISTS fact_invoice
 (
     realty_id UInt64,
     user_id   UInt64,

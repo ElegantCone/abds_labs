@@ -1,4 +1,4 @@
-INSERT INTO energosbyt.dim_realty
+INSERT INTO dim_realty
     (id, address, square, `type`, number, rooms, floor, porch, created_at)
 SELECT id,address,square,`type`,number,rooms,floor,porch,created_at
 FROM input('id UInt64,

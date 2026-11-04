@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS energosbyt.fact_meter_readings
+CREATE TABLE IF NOT EXISTS fact_meter_readings
 (
     realty_id    UInt64,
     user_id      UInt64,

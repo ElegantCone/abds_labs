@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("org.springframework.boot") version "4.0.9"
 }
 
 group = "org.itmo"
@@ -16,15 +17,29 @@ java {
 }
 
 dependencies {
+    implementation(platform("org.springframework.boot:spring-boot-dependencies:4.0.9"))
+    implementation("org.springframework.boot:spring-boot-starter-webmvc")
+    implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    runtimeOnly("com.clickhouse:clickhouse-jdbc:0.9.8:all")
     compileOnly("org.projectlombok:lombok:1.18.48")
     annotationProcessor("org.projectlombok:lombok:1.18.48")
-    testImplementation(platform("org.junit:junit-bom:5.10.0"))
-    testImplementation("org.junit.jupiter:junit-jupiter")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.test {
     useJUnitPlatform()
+}
+
+tasks.bootJar {
+    archiveFileName.set("app.jar")
+}
+
+tasks.register<Jar>("generatorJar") {
+    archiveFileName.set("generator.jar")
+    from(sourceSets["main"].output)
+    include("org/itmo/generator/**")
+    manifest {
+        attributes("Main-Class" to "org.itmo.generator.DataGen")
+    }
 }
 
 tasks.register<JavaExec>("generateData") {

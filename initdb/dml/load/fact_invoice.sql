@@ -1,4 +1,4 @@
-INSERT INTO energosbyt.fact_invoice
+INSERT INTO fact_invoice
     (realty_id, user_id, tariff_id, gauge_id, day_kw, night_kw, price, deadline, created_at)
 SELECT realty_id, user_id, tariff_id, gauge_id, day_kw, night_kw, price, deadline, created_at
 FROM input('realty_id UInt64,

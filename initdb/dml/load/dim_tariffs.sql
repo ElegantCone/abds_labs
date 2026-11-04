@@ -1,4 +1,4 @@
-INSERT INTO energosbyt.dim_tariffs
+INSERT INTO dim_tariffs
     (id, name, price_day_kwph, price_night_kwph, valid_from, valid_to, created_at, updated_at)
 SELECT id, name, price_day_kwph, price_night_kwph, valid_from, valid_to, created_at, updated_at
 FROM input('id UInt64,

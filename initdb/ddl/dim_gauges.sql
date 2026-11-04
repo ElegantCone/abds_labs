@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS energosbyt.dim_gauges
+CREATE TABLE IF NOT EXISTS dim_gauges
 (
     id         UInt64,
     name       String,

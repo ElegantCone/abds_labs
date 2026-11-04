@@ -1,4 +1,4 @@
-CREATE TABLE IF NOT EXISTS energosbyt.fact_gauge_bindings
+CREATE TABLE IF NOT EXISTS fact_gauge_bindings
 (
     gauge_id   UInt64,
     realty_id  UInt64,
