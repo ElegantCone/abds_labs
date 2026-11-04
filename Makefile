@@ -8,6 +8,9 @@ COMPOSE = docker compose --env-file "$(ENV_FILE)"
 .DEFAULT_GOAL := run
 
 run:
+	@if [ -n "$$GITHUB_ENV" ]; then \
+		printf 'COMPOSE_ENV_FILES=%s\n' "$(ENV_FILE)" >> "$$GITHUB_ENV"; \
+	fi
 	$(COMPOSE) up -d --build
 
 rund:
