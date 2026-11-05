@@ -70,6 +70,7 @@ vendor/
 # Java
 *.class
 *.jar
+!gradle/wrapper/gradle-wrapper.jar
 *.war
 *.ear
 target/
@@ -98,3 +99,7 @@ yarn-error.log*
 vendor/
 composer.phar
 composer.lock
+
+# ClickHouse data
+volume/
+data/

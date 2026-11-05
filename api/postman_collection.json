@@ -1,0 +1,773 @@
+{
+  "info": {
+    "_postman_id": "c886eafd-3dcd-42a5-8d90-8112d00387b4",
+    "name": "ABDS",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24915633",
+    "_collection_link": "https://go.postman.co/collection/24915633-c886eafd-3dcd-42a5-8d90-8112d00387b4?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "1. Ping",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/ping",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "ping"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2.1 User_ok",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2.1 User_bad",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/users/0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2.1 User patch_204",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"fio\": \"Петрова Анна Сергеевна\",\n    \"phone\": \"+79111111111\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2.2 User patch_400",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"fio\": null,\n    \"phone\": \"+79111111111\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2.3 User patch_204 (no phone)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"fio\": \"Петрова Анна Сергеевна\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "2.4 User patch_404",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"fio\": \"Петрова Анна Сергеевна\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/users/0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "users",
+            "0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3.1 Realty_200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realty/1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "3.2 Realty_404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realty/0",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "0"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4.1 Realty_readings_201",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"gauge_id\": 1,\n    \"tariff_id\": 1,\n    \"reading_date\": \"2026-10-01\",\n    \"day_kw\": 1250,\n    \"night_kw\": 300\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/readings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "readings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4.2 Realty_readings_400",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"gauge_id\": 1,\n    \"tariff_id\": 1,\n    \"reading_date\": \"2026-10-01\",\n    \"day_kw\": 12500000000000,\n    \"night_kw\": 300\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/readings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "readings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "4.3 Realty_readings_404",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"gauge_id\": 1,\n    \"tariff_id\": 0,\n    \"reading_date\": \"2026-10-01\",\n    \"day_kw\": 1250,\n    \"night_kw\": 300\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/readings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "readings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5.1 Realty_readings_period_200",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"gauge_id\": 1,\n    \"tariff_id\": 0,\n    \"reading_date\": \"2026-10-01\",\n    \"day_kw\": 1250,\n    \"night_kw\": 300\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/readings?date_from=2026-10-01&date_to=2026-10-31",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "readings"
+          ],
+          "query": [
+            {
+              "key": "date_from",
+              "value": "2026-10-01",
+              "type": "text"
+            },
+            {
+              "key": "date_to",
+              "value": "2026-10-31",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5.2 Realty_readings_period_200(empty)",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"gauge_id\": 1,\n    \"tariff_id\": 0,\n    \"reading_date\": \"2026-10-01\",\n    \"day_kw\": 1250,\n    \"night_kw\": 300\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/readings?date_from=2015-01-01&date_to=2015-01-02",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "readings"
+          ],
+          "query": [
+            {
+              "key": "date_from",
+              "value": "2015-01-01"
+            },
+            {
+              "key": "date_to",
+              "value": "2015-01-02"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5.3 Realty_readings_period_400",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"gauge_id\": 1,\n    \"tariff_id\": 0,\n    \"reading_date\": \"2026-10-01\",\n    \"day_kw\": 1250,\n    \"night_kw\": 300\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/readings?date_from=1&date_to=2015-01-02",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "readings"
+          ],
+          "query": [
+            {
+              "key": "date_from",
+              "value": "1"
+            },
+            {
+              "key": "date_to",
+              "value": "2015-01-02"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "5.4 Realty_readings_period_404",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"user_id\": 1,\n    \"gauge_id\": 1,\n    \"tariff_id\": 0,\n    \"reading_date\": \"2026-10-01\",\n    \"day_kw\": 1250,\n    \"night_kw\": 300\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/0/readings?date_from=2015-01-01&date_to=2015-01-02",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "0",
+            "readings"
+          ],
+          "query": [
+            {
+              "key": "date_from",
+              "value": "2015-01-01"
+            },
+            {
+              "key": "date_to",
+              "value": "2015-01-02"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6.1 Realty_invoices_200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realty/1/invoices",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "invoices"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6.2 Realty_invoices_200 (with limit and offset)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realty/1/invoices?limit=12&offset=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "invoices"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "12",
+              "description": "``"
+            },
+            {
+              "key": "offset",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6.3 Realty_invoices_400",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realty/1/invoices?limit=12&offset=-1",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "invoices"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "12",
+              "description": "``"
+            },
+            {
+              "key": "offset",
+              "value": "-1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "6.4 Realty_invoices_404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/realty/0/invoices?limit=12&offset=5",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "0",
+            "invoices"
+          ],
+          "query": [
+            {
+              "key": "limit",
+              "value": "12",
+              "description": "``"
+            },
+            {
+              "key": "offset",
+              "value": "5"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7.1 Tariffs_200",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tariffs?date=2026-10-27",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tariffs"
+          ],
+          "query": [
+            {
+              "key": "date",
+              "value": "2026-10-27"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7.2 Tariffs_400",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tariffs",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tariffs"
+          ],
+          "query": [
+            {
+              "key": "date",
+              "value": "2026-10-27",
+              "disabled": true
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "7.3 Tariffs_404",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/tariffs?date=2015-10-27",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "tariffs"
+          ],
+          "query": [
+            {
+              "key": "date",
+              "value": "2015-10-27"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8.1 Gauge_201",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"gauge_id\": 2\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/gauges",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "gauges"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8.2 Gauge_400",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"gauge_id\": \"abcd\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/gauges",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "gauges"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "8.3 Gauge_404",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"gauge_id\": 0\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/realty/1/gauges",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "realty",
+            "1",
+            "gauges"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
